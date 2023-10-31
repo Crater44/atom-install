@@ -1,6 +1,7 @@
 #!/bin/bash
-deb_url="https://download.pulsar-edit.dev/?os=linux&type=linux_deb"
-deb_filename="pulsar.deb"
+sudo apt install git libasound2 libcurl4 libgbm1 libgcrypt20 libgtk-3-0 libnotify4 libnss3 libglib2.0-bin xdg-utils libx11-xcb1 libxcb-dri3-0 libxss1 libxtst6 libxkbfile1
+deb_url="https://github.com/atom/atom/releases/download/v1.60.0/atom-amd64.deb"
+deb_filename="atom_install.deb"
 download_dir="/tmp"
 custom_packages_dir=($HOME/atom-custom-packages)
 mkdir $custom_packages_dir
@@ -36,6 +37,6 @@ done
 
 directories=($(ls -d $custom_packages_dir/*))
 for dir in "${directories[@]}"; do
-    ppm link $dir
+    apm link $dir
 done
-ppm install
+apm install
