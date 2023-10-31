@@ -2,7 +2,7 @@
 deb_url="https://download.pulsar-edit.dev/?os=linux&type=linux_deb"
 deb_filename="pulsar.deb"
 download_dir="/tmp"
-custom_packages_dir=($(pwd)/atom-custom-packages)
+custom_packages_dir=($HOME/atom-custom-packages)
 mkdir $custom_packages_dir
 github_url="https://github.com"
 wget -O "$download_dir/$deb_filename" "$deb_url"
@@ -36,6 +36,6 @@ done
 
 directories=($(ls -d $custom_packages_dir/*))
 for dir in "${directories[@]}"; do
-    ppm link $custom_packages_dir/$dir
+    ppm link $dir
 done
 ppm install
