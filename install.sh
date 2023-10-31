@@ -38,5 +38,6 @@ done
 directories=($(ls -d $custom_packages_dir/*))
 for dir in "${directories[@]}"; do
     apm link $dir
+    cd $dir
+    apm install
 done
-apm install
